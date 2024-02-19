@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello QuizController!{% endblock %}
+
+{% block body %}
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Level</th>
+                <th>Categories</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for quiz in quiz %}
+                <tr>
+                    <td>{{ quiz.title }}</td>
+                    <td>{{ quiz.level }}</td>
+                    <td>{{ quiz.categories|join(', ') }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
