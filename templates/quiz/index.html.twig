@@ -3,6 +3,9 @@
 {% block title %}Quiz Application{% endblock %}
 
 {% block body %}
+    {% if form is defined %}
+    {{ form(quiz_form) }}
+    {% endif %}
     <div class="container">
         <table class="table table-bordered">
             <thead>
@@ -13,7 +16,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for quiz in quiz %}
+            {% for quiz in quizzes %}
                 <tr>
                     <td>{{ quiz.title }}</td>
                     <td>{{ quiz.level }}</td>
