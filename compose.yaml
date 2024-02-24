@@ -14,6 +14,19 @@ services:
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
       # - ./docker/db/data:/var/lib/postgresql/data:rw
 ###< doctrine/doctrine-bundle ###
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html/
+
+  php:
+    image: php:fpm-alpine
+    volumes:
+      - ./:/var/www/html/
 
 volumes:
 ###> doctrine/doctrine-bundle ###
