@@ -6,7 +6,7 @@ namespace App\Service;
 
 use Symfony\Component\Yaml\Yaml;
 
-class QuizService
+class QuizLoader
 {
     public function readYamlFiles(string $folderPath): array
     {
