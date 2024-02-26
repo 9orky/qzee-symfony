@@ -16,16 +16,20 @@ class QuizFormType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('level', ChoiceType::class, [
-                'Easy' => 'Easy',
-                'Medium' => 'Medium',
-                'Hard' => 'Hard'
+                'choices' => [
+                    'Easy' => 'Easy',
+                    'Medium' => 'Medium',
+                    'Hard' => 'Hard'
+                ]
             ])
             ->add( 'categories', ChoiceType::class, [
-                'movies' => 'movies',
-                'programming' => 'programming',
-                'data structures' => 'data structures',
-                'technology' => 'technology',
-                'docker' => 'docker'
+                'choices' => [
+                    'movies' => 'movies',
+                    'programming' => 'programming',
+                    'data structures' => 'data structures',
+                    'technology' => 'technology',
+                    'docker' => 'docker'
+                ]
             ] )
             ->add('Add', SubmitType::class)
         ;
